@@ -11,7 +11,7 @@ import Loader from "Rizh/components/layouts/loader";
 import EndPages from "Rizh/components/pages/endPages";
 
 // Interface
-interface Soal {
+interface SoalInter {
 	no: number;
 	soal: string;
 	jawaban: string[];
@@ -23,7 +23,7 @@ interface Soal {
 const Quiz = () => {
 	// Use State
 	const [isLoading, setIsLoading] = useState(true);
-	const [soal, setSoal] = useState<Soal[]>([]);
+	const [soal, setSoal] = useState<SoalInter[]>([]);
 	const [nomorSoal, setNomorSoal] = useState(1);
 	const [poin, setPoin] = useState(0);
 
