@@ -1,0 +1,28 @@
+.end {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	font-family: "Roboto", sans-serif;
+	text-align: center;
+	background-color: #192655;
+}
+
+.h1 {
+	color: white;
+}
+
+.backToMenu {
+	padding-inline: 1rem;
+	padding-block: 0.5rem;
+	background-color: rgb(252, 219, 174);
+	border-radius: 25px;
+	text-decoration: none;
+}
+
+.backToMenu:hover {
+	color: black;
+	background-color: white;
+}
