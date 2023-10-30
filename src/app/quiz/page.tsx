@@ -2,6 +2,7 @@
 // Importing Library
 import { useState, FormEvent, useEffect } from "react";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 // Importing Package
 import "animate.css";
@@ -21,11 +22,13 @@ interface SoalInter {
 }
 
 const Quiz = () => {
+	const params = useSearchParams();
 	// Use State
 	const [isLoading, setIsLoading] = useState(true);
 	const [soal, setSoal] = useState<SoalInter[]>([]);
 	const [nomorSoal, setNomorSoal] = useState(1);
 	const [poin, setPoin] = useState(0);
+	const name: any = params.get("name");
 
 	const soalYangCocok: any = soal.find((soal) => soal.no === nomorSoal);
 
@@ -65,9 +68,12 @@ const Quiz = () => {
 			{soalYangCocok && (
 				<div>
 					<h1 className="animate__animated animate__bounceIn">
-						Tebak Tokoh OSIS dan Kebudayaan
+						Uji Wawasan Budaya Indonesia: Seberapa Tahu Anda tentang
+						Kebudayaan Nusantara?
 					</h1>
 					<div className="score animate__animated animate__lightSpeedInRight">
+						Nama : <span id="name">{name}</span>
+						<br />
 						Skor: <span id="score">{poin}</span>
 					</div>
 				</div>
@@ -108,7 +114,7 @@ const Quiz = () => {
 				</div>
 			) : (
 				<div>
-					<EndPages score={poin} />
+					<EndPages score={poin} name={name} />
 				</div>
 			)}
 		</div>

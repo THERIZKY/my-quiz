@@ -4,10 +4,20 @@
 	align-items: center;
 	justify-content: center;
 	width: 100vw;
+	gap: 10px;
 	height: 100vh;
 	font-family: "Roboto", sans-serif;
 	text-align: center;
 	background-color: #192655;
+}
+
+.name {
+	color: orange;
+	font-size: 50px;
+}
+
+.congrats {
+	color: rgb(87, 87, 253);
 }
 
 .h1 {
